@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Clash Display', sans-serif;
+  background-color: #E8E8E8;
+  margin: 40px 40px;
+  color: grey;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  margin: 0 auto;
+  width: 800px;
+  gap: 30px;
+}
+
+.left-side {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.right-side {
+  font-weight: 600;
+  background-color: yellow;
+  color: black;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.show-result{
+  display: inline-block;
+}
+.heading {
+  font-weight: 500;
+  color: black;
+}
+
+.divider {
+  margin: 20px 0;
+  border-top: 2px solid #E8E8E8;
+}
+
+.form-area {
+  padding-top: 2px;
+}
+form .txt_field {
+  position: relative;
+  margin: 3rem 0;
+}
+
+#text-area {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #E8E8E8;
+  padding: 10px;
+}
+
+#text-area::placeholder {
+  font-size: 18px;
+}
+
+form .password {
+  margin: 0;
+}
+
+.txt_field input {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  height: 40px;
+  font-size: 18px;
+  border: 2px solid #E8E8E8;
+  border-radius: 10px;
+  background: none;
+  outline: none;
+  font-family: 'Clash Display', sans-serif;
+}
+
+#redacted-words {
+  padding-right: 70px;
+}
+
+.txt_field label {
+  position: absolute;
+  font-weight: 500;
+  font-size: 1.3rem;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-200%);
+  pointer-events: none;
+  transition: .5s;
+}
+
+#reset-btn {
+  color: #0085FE;
+  font-weight: 500;
+  font-size: 19px;
+  position: absolute;
+  right: 10px;
+  text-decoration: none;
+}
+
+.redact-text label {
+  top: 10%;
+  transform: translateY(-200%);
+}
+
+.redacted-text {
+  display: flex;
+  align-items: center;
+}
+
+::placeholder {
+  font-family: 'Clash Display', sans-serif;
+}
+
+#submit-btn {
+  background-color: #0085FE;
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Clash Display', sans-serif;
+}
+
+.redacted-details {
+  border: 2px dashed #E8E8E8;
+  border-left: 0;
+  border-right: 0;
+  display: flex;
+  padding: 30px 0;
+  gap: 15px;
+  margin: 40px 0;
+}
+
+.redacted-details img {
+  width: 32px;
+  opacity: 50%;
+}
+
+.redact-heading {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom:15px;
+}
+
+.details {
+  color: #FAC887;
+  font-weight: 700;
+}
+
+.detailed {
+  font-size: 17px;
+  line-height: 1.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    margin: 0;
+  }
+  .main-content {
+    width: 100vw;
+  }
+}
