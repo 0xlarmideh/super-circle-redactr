@@ -13,9 +13,15 @@
 
 <body>
   <main class="whole-page">
+    <div class="main-heading">
+      <h1>Redactr App</h1>
+    </div>
     <div class="main-content">
       <div class="left-side">
-        <h1 class="heading">Redactr</h1>
+        <h1 class="heading">About Redactr</h1>
+        <div class="redactr-description">Redactr helps people safely share contents on social media by scrambling
+          specified
+          portions of the text they don’t want the world to read/see with symbol of choice.</div>
         <div class="divider"></div>
         <div class="form-area">
           <form class="redact-form">
@@ -29,26 +35,30 @@
               <label>Redact this</label>
             </div>
             <div class="txt_field redact-symbol">
-              <input id="redact-sym" type="text" placeholder="Enter symbol">
+              <input id="redact-sym" type="text" placeholder="Enter symbol of your choice e.g.(*&%$#-)">
               <label>Redact symbol</label>
             </div>
             <a id="submit-btn" href="#">Redact Now</a>
           </form>
-          <div class="redacted-details">
-            <div><img src="./assets/details.png" alt="details"></div>
-            <div class="redacted-desc">
-              <div class="redact-heading">Redacted Words Details</div>
-              <div class="detailed">Scanned words: <span class="details" id="total-words">0 </span>WORDS</div>
-              <div class="detailed">Redacted words: <span class="details" id="total-redacted">0 </span>WORDS</div>
-              <div class="detailed">Characters found: <span class="details" id="total-characters">0 </span>CHARACTERS
-              </div>
-              <div class="detailed"></div>Execution time: <span class="details" id="total-time">0</span>seconds
-            </div>
-          </div>
+
         </div>
       </div>
       <div class="right-side">
+        <h1 class="heading output">Output</h1>
         <div class="show-result"></div>
+        <div class="redacted-details">
+          <div class="redacted-desc">
+            <div class="redact-heading">Redacted Words Details</div>
+            <div class="details-div">
+              <div class="detailed">Scanned words </br> <span class="details" id="total-words">0 </span></div>
+              <div class="detailed">Redacted words </br> <span class="details" id="total-redacted">0 </span></div>
+              <div class="detailed">Characters found </br> <span class="details" id="total-characters">0
+                </span> </div>
+              <div class="detailed">Execution time(s) </br> <span class="details" id="total-time">0</span></div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </main>

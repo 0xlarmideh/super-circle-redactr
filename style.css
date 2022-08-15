@@ -6,43 +6,51 @@
 
 body {
   font-family: 'Clash Display', sans-serif;
-  background-color: #E8E8E8;
-  margin: 40px 40px;
-  color: grey;
+}
+
+.main-heading {
+  color: white;
+  background-color: #0085FE;
+  padding: 10px;
+  text-align: center;
+}
+
+.redactr-description {
+  margin: 20px 0;
+  padding: 15px;
+  border-left: 5px solid yellow;
 }
 
 .main-content {
   display: grid;
-  grid-template-columns: 5fr 3fr;
+  grid-template-columns: 1fr 1fr;
   margin: 0 auto;
-  width: 800px;
   gap: 30px;
 }
 
 .left-side {
   background-color: white;
   padding: 30px;
-  border-radius: 10px;
 }
 
 .right-side {
   font-weight: 600;
-  background-color: yellow;
+  background-color: white;
   color: black;
   padding: 30px;
-  border-radius: 10px;
 }
 
 .show-result{
   display: inline-block;
 }
+
 .heading {
   font-weight: 500;
   color: black;
 }
 
 .divider {
-  margin: 20px 0;
+  margin: 10px 0;
   border-top: 2px solid #E8E8E8;
 }
 
@@ -51,12 +59,12 @@ body {
 }
 form .txt_field {
   position: relative;
-  margin: 3rem 0;
+  margin: 2.6rem 0;
 }
 
 #text-area {
   width: 100%;
-  border-radius: 10px;
+/*   border-radius: 10px; */
   border: 2px solid #E8E8E8;
   padding: 10px;
 }
@@ -65,9 +73,6 @@ form .txt_field {
   font-size: 18px;
 }
 
-form .password {
-  margin: 0;
-}
 
 .txt_field input {
   position: relative;
@@ -76,7 +81,7 @@ form .password {
   height: 40px;
   font-size: 18px;
   border: 2px solid #E8E8E8;
-  border-radius: 10px;
+/*   border-radius: 10px; */
   background: none;
   outline: none;
   font-family: 'Clash Display', sans-serif;
@@ -106,6 +111,9 @@ form .password {
   text-decoration: none;
 }
 
+.redact-symbol {
+  margin: 0;;
+}
 .redact-text label {
   top: 10%;
   transform: translateY(-200%);
@@ -121,15 +129,17 @@ form .password {
 }
 
 #submit-btn {
+/*   transform: translateY(-30%); */
   background-color: #0085FE;
   color: white;
   width: 100%;
   text-align: center;
   font-size: 1.3rem;
   font-weight: 500;
-  outline: none;
+  outline: 3px solid yellow;
   padding: 10px;
-  border-radius: 10px;
+  text-decoration: none;
+  display: block;
   border: none;
   font-family: 'Clash Display', sans-serif;
 }
@@ -141,7 +151,7 @@ form .password {
   display: flex;
   padding: 30px 0;
   gap: 15px;
-  margin: 40px 0;
+  margin: 20px 0;
 }
 
 .redacted-details img {
@@ -156,14 +166,26 @@ form .password {
 }
 
 .details {
-  color: #FAC887;
   font-weight: 700;
+  color: #0085FE;
+  font-size: 22px;
 }
 
 .detailed {
   font-size: 17px;
+  font-weight: 500;
   line-height: 1.5rem;
+  background-color: #F0F8FF;
+  padding: 10px;
+  width: 100%;
 }
+
+  .details-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-content: space-between;
+  }
 
 @media only screen and (max-width: 600px) {
   body {
@@ -171,5 +193,49 @@ form .password {
   }
   .main-content {
     width: 100vw;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
+  
+  .main-heading{
+    font-size: 0.75rem;
+    padding: 10px;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .output {
+    margin-top: 10px;
+  }
+
+  .redactr-description {
+    padding: 0px;
+    padding-left: 10px;
+    margin: 5px 0;
+  }
+
+  .divider {
+  display: none;
+}
+
+  .left-side, .right-side {
+  padding: 15px 30px 0 30px;
+}
+
+  #text-area {
+  height: 100px;
+}
+  
+  .txt_field label{
+    display: none;
+  }
+  
+  form .txt_field {
+  position: relative;
+  margin: 1.2rem 0;
+}
 }
