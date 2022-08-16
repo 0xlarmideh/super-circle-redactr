@@ -3,6 +3,7 @@ const resetBtn = document.querySelector("#reset-btn"),
   showRedact = document.querySelector(".show-result"),
   rightSide = document.querySelector(".right-side"),
   submitBtn = document.querySelector("#submit-btn"),
+  clearBtn = document.querySelector("#clear-btn"),
   redactedDetails = document.querySelector(".redacted-details"),
   totalWords = document.querySelector("#total-words"),
   totalCharacters = document.querySelector("#total-characters"),
@@ -10,42 +11,49 @@ const resetBtn = document.querySelector("#reset-btn"),
   totalTime = document.querySelector("#total-time");
 
 function startApp() {
-  submitBtn.addEventListener("click", getRedact)
+  submitBtn.addEventListener("click", getRedact);
+  clearBtn.addEventListener("click", clearAll)
 };
 
 // function to redact text on click
 function getRedact(e) {
   let start = performance.now();
-  const textContent = document.querySelector("#text-area").value;
-  const redactedWords = document.querySelector("#redacted-words").value;
-  const redactSymbol = document.querySelector("#redact-sym").value;
-  const textContentSplit = textContent.split(" ");
-  const totalTextChar = textContentSplit.join("")
-  const redactedWordSplit = redactedWords.split(" ");
-  const totalRedactWords = []
+  const textContent = document.querySelector("#text-area").value,
+    redactedWords = document.querySelector("#redacted-words").value,
+    redactSymbol = document.querySelector("#redact-sym").value,
+    textContentSplit = textContent.split(/[\s]|[.,?;:"'-'"]/),
+    totalTextChar = textContentSplit.join(""),
+    redactedWordSplit = redactedWords.split(" "),
+    totalRedactWords = [],
+    newTextContentSplit = [];
+  for (let x of textContentSplit) {
+    newTextContentSplit.push(x.toLowerCase())
+  }
 
   for (let item of redactedWordSplit) {
-    if (textContentSplit.includes(item)) {
+    if (newTextContentSplit.includes(item.toLowerCase())) {
       totalRedactWords.push(item)
-      const index = textContentSplit.findIndex((el) => el === item)
-      textContentSplit[index] = new String(convertSymbol(item, redactSymbol))
+      const index = newTextContentSplit.findIndex((el) => el === item.toLowerCase())
+      newTextContentSplit[index] = new String(convertSymbol(item, redactSymbol))
     }
   }
-  console.log(textContentSplit)
-  showRedact.textContent = textContentSplit.join(" ")
-
+  // console.log(newTextContentSplit)
+  showRedact.textContent = newTextContentSplit.join(" ");
   totalWords.textContent = textContentSplit.length;
   totalCharacters.textContent = totalTextChar.length;
   totalRedacted.textContent = totalRedactWords.length
-  console.log(textContentSplit.length);
+  // console.log(newTextContentSplit.length);
 
   let timeTaken = (performance.now() - start).toFixed(2);
   totalTime.textContent = timeTaken + "ms";
   console.log(timeTaken + "ms")
-
   e.preventDefault();
 }
 
+function clearAll(e) {
+  document.querySelector(".redact-form").reset();
+  e.preventDefault();
+}
 // function to convert strings to symbols
 function convertSymbol(name, symbol = "@") {
   let newItem = ""

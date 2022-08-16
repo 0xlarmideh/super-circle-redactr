@@ -41,7 +41,10 @@ body {
 }
 
 .show-result{
-  display: inline-block;
+  display: block;
+  font-weight: 400;
+  padding: 10px;
+  background-color: whitesmoke;
 }
 
 .heading {
@@ -57,6 +60,8 @@ body {
 .form-area {
   padding-top: 2px;
 }
+
+
 form .txt_field {
   position: relative;
   margin: 2.6rem 0;
@@ -64,15 +69,18 @@ form .txt_field {
 
 #text-area {
   width: 100%;
-/*   border-radius: 10px; */
   border: 2px solid #E8E8E8;
   padding: 10px;
 }
 
 #text-area::placeholder {
   font-size: 18px;
+font-family: 'Clash Display', sans-serif;
 }
 
+.txt_field textarea {
+  font-family: 'Clash Display', sans-serif;
+}
 
 .txt_field input {
   position: relative;
@@ -81,7 +89,6 @@ form .txt_field {
   height: 40px;
   font-size: 18px;
   border: 2px solid #E8E8E8;
-/*   border-radius: 10px; */
   background: none;
   outline: none;
   font-family: 'Clash Display', sans-serif;
@@ -112,8 +119,9 @@ form .txt_field {
 }
 
 .redact-symbol {
-  margin: 0;;
+  margin: 0;
 }
+
 .redact-text label {
   top: 10%;
   transform: translateY(-200%);
@@ -128,20 +136,27 @@ form .txt_field {
   font-family: 'Clash Display', sans-serif;
 }
 
-#submit-btn {
-/*   transform: translateY(-30%); */
+.btn {
   background-color: #0085FE;
   color: white;
   width: 100%;
   text-align: center;
   font-size: 1.3rem;
   font-weight: 500;
-  outline: 3px solid yellow;
   padding: 10px;
   text-decoration: none;
   display: block;
   border: none;
   font-family: 'Clash Display', sans-serif;
+}
+
+#clear-btn {
+  background: black;
+  margin-top: 10px;
+}
+
+.output {
+    margin-top: 10px;
 }
 
 .redacted-details {
@@ -206,10 +221,6 @@ form .txt_field {
     font-size: 1.5rem;
     padding: 0;
     margin: 0;
-  }
-
-  .output {
-    margin-top: 10px;
   }
 
   .redactr-description {

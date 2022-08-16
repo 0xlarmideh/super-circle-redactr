@@ -1,0 +1,7 @@
+for (let item of redactedWordSplit) {
+    if (textContentSplit.includes(item)) {
+      totalRedactWords.push(item)
+      const index = textContentSplit.findIndex((el) => el.toLowerCase() === item.toLowerCase())
+      textContentSplit[index] = new String(convertSymbol(item, redactSymbol))
+    }
+  }
