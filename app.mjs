@@ -17,7 +17,7 @@ function startApp() {
 function getRedact(e) {
   // getting the execution time
   let start = performance.now();
-  
+
   // Input value variables
   const textContent = document.querySelector("#text-area").value,
     redactedWords = document.querySelector("#redacted-words").value,
@@ -56,6 +56,11 @@ function getRedact(e) {
 // function to clear all inputs
 function clearAll(e) {
   document.querySelector(".redact-form").reset();
+  totalWords.textContent = "0";
+  totalCharacters.textContent = "0";
+  totalRedacted.textContent = "0";
+  totalTime.textContent = "0ms";
+  showRedact.textContent = "";
   e.preventDefault();
 }
 
