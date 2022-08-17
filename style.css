@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Clash Display', sans-serif;
+  background-color: white;
 }
 
 .main-heading {
@@ -81,6 +82,7 @@ font-family: 'Clash Display', sans-serif;
 .txt_field textarea {
   font-family: 'Clash Display', sans-serif;
   font-size: 14px;
+  background-color: #f6f6f6;
 }
 
 .txt_field input {
@@ -89,8 +91,8 @@ font-family: 'Clash Display', sans-serif;
   padding: 10px;
   height: 40px;
   font-size: 14px;
+  background-color: #f6f6f6;
   border: 2px solid #E8E8E8;
-  background: none;
   outline: none;
   font-family: 'Clash Display', sans-serif;
 }
@@ -161,10 +163,6 @@ font-family: 'Clash Display', sans-serif;
   background: black;
 }
 
-.output {
-    margin-top: 10px;
-}
-
 .redacted-details {
   border: 2px dashed #E8E8E8;
   border-left: 0;
@@ -206,6 +204,17 @@ font-family: 'Clash Display', sans-serif;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     justify-content: space-between;
+    width: 100%;
+  }
+
+.output{
+  margin-bottom:20px;
+}
+
+.show-result {
+    height: 200px;
+  background-color: #f6f6f6;
+  outline: 2px solid #E8E8E8;
   }
 
 @media only screen and (max-width: 600px) {
@@ -255,4 +264,12 @@ font-family: 'Clash Display', sans-serif;
   position: relative;
   margin: 1.2rem 0;
 }
+
+  .output {
+    margin-bottom: 15px
+  }
+  
+  .show-result {
+    height: 100px;
+  }
 }
