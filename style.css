@@ -41,12 +41,6 @@ body {
   padding: 30px;
 }
 
-.show-result{
-  display: block;
-  font-weight: 400;
-  padding: 10px;
-  background-color: whitesmoke;
-}
 
 .heading {
   font-weight: 500;
@@ -191,8 +185,8 @@ font-family: 'Clash Display', sans-serif;
 }
 
 .detailed {
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 400;
   line-height: 1.5rem;
   background-color: #F0F8FF;
   padding: 10px;
@@ -201,7 +195,7 @@ font-family: 'Clash Display', sans-serif;
 
   .details-div {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     justify-content: space-between;
     width: 100%;
@@ -211,20 +205,28 @@ font-family: 'Clash Display', sans-serif;
   margin-bottom:20px;
 }
 
-.show-result {
-    height: 200px;
+.show-result{
+  display: block;
+  font-weight: 400;
+  font-size: 1.2rem;
+  padding: 10px;
+  height: 200px;
   background-color: #f6f6f6;
   outline: 2px solid #E8E8E8;
-  }
-
-@media only screen and (max-width: 600px) {
-  body {
-    margin: 0;
+}
+@media only screen and (max-width: 1400px){
+  .details-div {
+    grid-template-columns: 1fr 1fr;
   }
   .main-content {
     width: 100vw;
     grid-template-columns: 1fr;
     gap: 0;
+  }
+}
+@media only screen and (max-width: 900px) {
+  body {
+    margin: 0;
   }
   
   .main-heading{
@@ -271,5 +273,9 @@ font-family: 'Clash Display', sans-serif;
   
   .show-result {
     height: 100px;
+  }
+
+  .details-div {
+    grid-template-columns: 1fr 1fr;
   }
 }

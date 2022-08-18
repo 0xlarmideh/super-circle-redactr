@@ -43,10 +43,15 @@ function getRedact(e) {
   }
 
   // redaction results metrics
+  if (textContent === "") {
+    totalRedacted.textContent = 0
+  } else {
+    totalRedacted.textContent = totalRedactWords.length
+  }
+
   showRedact.textContent = newTextContentSplit.join(" ");
   totalWords.textContent = textContentSplit.length;
   totalCharacters.textContent = totalTextChar.length;
-  totalRedacted.textContent = totalRedactWords.length
   let timeTaken = (performance.now() - start).toFixed(2);
   totalTime.textContent = timeTaken + "ms";
   console.log(timeTaken + "ms")
