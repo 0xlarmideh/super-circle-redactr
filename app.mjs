@@ -12,7 +12,7 @@ function startApp() {
   submitBtn.addEventListener("click", getRedact);
   clearBtn.addEventListener("click", clearAll)
 };
-
+showRedact.textContent == (showRedact.style.display = "none")
 // function to redact text on click
 function getRedact(e) {
   // getting the execution time
@@ -49,7 +49,14 @@ function getRedact(e) {
     totalRedacted.textContent = totalRedactWords.length
   }
 
-  showRedact.textContent = newTextContentSplit.join(" ");
+    showRedact.textContent = newTextContentSplit.join(" ");
+    if (showRedact.textContent !== ""){
+
+   showRedact.style.display = "block";
+    }else {
+   showRedact.style.display = "none";
+
+    }
   totalWords.textContent = textContentSplit.length;
   totalCharacters.textContent = totalTextChar.length;
   let timeTaken = (performance.now() - start).toFixed(2);
