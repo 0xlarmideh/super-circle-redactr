@@ -73,6 +73,9 @@ function clearAll(e) {
   totalRedacted.textContent = "0";
   totalTime.textContent = "0ms";
   showRedact.textContent = "";
+  if (showRedact.textContent === "") {
+    showRedact.style.display = "none";
+  } 
   e.preventDefault();
 }
 
